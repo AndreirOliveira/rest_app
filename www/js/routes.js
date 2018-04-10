@@ -12,6 +12,10 @@ routes = [
     url: './pages/reservas.html',
   },
   {
+    path: '/reservaadm/',
+    url: './pages/reservaadm.html',
+  },
+  {
     path: '/produto/',
     url: './pages/produto.html',
   },
@@ -22,6 +26,10 @@ routes = [
   {
     path: '/form/',
     url: './pages/form_cadastro.html',
+  },
+  {
+    path: '/cardapio/',
+    url: './pages/listarcardapio.html',
   },
   // Left View Pages
   {

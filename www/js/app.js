@@ -2,12 +2,15 @@
 var $$ = Dom7;
 $$('.logoff').hide();
 $$('.login-screen-open').show();
+$$('.reservaindex').hide(); 
+$$('.reservaindexadm').hide(); 
+
 
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element
   id: 'br.com.phonegap.f7bikcraft', // App bundle ID
-  name: 'Bikcraft', // App name
+  name: 'Rest', // App name
   theme: 'auto', // Automatic theme detection
   // App root data
   data: function () {
@@ -82,11 +85,23 @@ $$('#my-login-screen .SignIn').on('click', function () {
     .signInWithEmailAndPassword(username,password) //Promisses
     .then( function () {
         app.dialog.alert('Bem vindo: ' + username);
-        this.$$('.toolbar-inner').text('Bem vindo: ' + username + ' vc está logado!');          
+        this.$$('.toolbar-inner').text('Bem vindo: ' + username + ' vc está logado!');
+        if(username == "admin@gmail.com"){
+          $$('.logoff').show();
+        $$('.login-screen-open').hide();
+        $$('.reservaindex').hide();
+        $$('.reservaindexadm').show();
+        $$('input#emailInput').val('');
+        $$('input#passwordInput').val('');   
+        }
+        else{
         $$('.logoff').show();
+        $$('.reservaindex').show();
         $$('.login-screen-open').hide();
         $$('input#emailInput').val('');
-        $$('input#passwordInput').val('');        
+        $$('input#passwordInput').val(''); 
+        }  
+         
     })
     .catch( function(error){
       console.error(error.code)
@@ -117,6 +132,7 @@ $$('#my-login-screen .SignOut').on('click', function () {
       console.error(error)
     })
 });
+
 $$('#my-login-screen .login-screen-close').on('click', function () {
   $$('input#emailInput').val('');
   $$('input#passwordInput').val('');
@@ -131,9 +147,39 @@ $$('.logoff').on('click', function () {
       $$('input#emailInput').val('');
       $$('input#passwordInput').val('');
       $$('.logoff').hide();
+      $$('.reservaindex').hide();
+      $$('.reservaindexadm').hide();
       $$('.login-screen-open').show();
     }, function(error){
       console.error(error)
     })  
-})
+});
+$$('#addButton').on('click', function () {
+  var nome = $$('#nome').val();
+  var pessoas = $$('#pessoas').val();
+  var data = $$('#data').val();
+  var horario = $$('#horario').val();
+  var email = $$('#emailreservas').val();
+  var telefone = $$('#telefone').val();
+  var mensagem = $$('#mensagem').val();
+
+  var formData = {Nome: nome, Pessoas: pessoas, Data: data, Horario: horario, Email: emailreservas, Telefone: telefone, Mensagem: mensagem}
+  console.log(formData);
+  firebase.database().ref().child('reserva').push(formData)
+  .then( function () {
+    app.dialog.alert('Orçamento Efetuado com Sucesso');
+    $$('input#nome').val('');
+    $$('input#pessoas').val('');
+    $$('input#data').val('');
+    $$('input#horario').val('');
+    $$('input#emailreservas').val('');
+    $$('input#telefone').val('');
+    $$('input#mensagem').val('');
+
+  }, function(error){
+    app.dialog.alert('Erro, confira o console');
+    console.error(error)
+  })
+});
+
 

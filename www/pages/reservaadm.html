@@ -1,0 +1,36 @@
+<script src="js/app.js"></script>
+<script src="js/reservaadm.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="js/firebaseapp.js"></script>
+<div class="page color-theme-red" data-name="listar_reserva">
+    <div class="navbar color-theme-red">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">VOLTAR</span>
+          </a>
+        </div>
+        <div class="title">Reservas</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title">Reservas</div>
+        <div class="block">
+            <input type="text" id="excluirrr" placeholder="Escreva o nome do produto para excluir"/>
+            <input type="button" id="apagarrr" value="apagar" onclick="apagarrr()">
+            <div class="row">
+                <div class="col-12 fontestoque">Id</div>
+                <div class="col-12 fontestoque">Nome</div>
+                <div class="col-12 fontestoque">Pessoas</div>
+                <div class="col-12 fontestoque">Data</div>
+                <div class="col-12 fontestoque">Horario</div>
+                <div class="col-12 fontestoque">Email</div>
+                <div class="col-12 fontestoque">Telefone</div>
+                <div class="col-12 fontestoque">Mensagem</div>
+            </div>
+           <div id="usersListt">
+           </div>
+    </div>
+  </div>
+  </div>

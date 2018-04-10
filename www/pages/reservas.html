@@ -1,12 +1,14 @@
-<div class="page" data-name="form">
-    <div class="navbar color-theme-red">
-      <div class="navbar-inner sliding">
-        <div class="left">
-          <a href="#" class="link back">
-            <i class="icon icon-back"></i>
-            <span class="ios-only">Back</span>
-          </a>
-        </div>
+<div class="popup form-firebase">
+  <div class="view">
+    <div class="page color-theme-red">
+      <div class="navbar">
+        <div class="navbar-inner sliding">
+          <div class="left">
+            <a href="#" class="popup-close">
+              <i class="icon icon-back"></i>
+              <span class="ios-only">Voltar</span>
+            </a>
+          </div>
         <div class="title">Reservas</div>
       </div>
     </div>
@@ -18,7 +20,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">Nome</div>
                 <div class="item-input-wrap">
-                  <input type="text" placeholder="Digite seu Nome"/>
+                  <input type="text" id="nome" placeholder="Digite seu Nome"/>
                 </div>
               </div>
             </div>
@@ -26,9 +28,9 @@
           <li>
             <div class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">N. de Pessoas</div>
+                <div class="item-title item-label">Pessoas</div>
                 <div class="item-input-wrap">
-                  <input type="text" placeholder="Digite a quantidade de pessoas"/>
+                  <input type="text" id="pessoas" placeholder="Digite a quantidade de pessoas"/>
                 </div>
               </div>
             </div>
@@ -38,7 +40,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">Data</div>
                 <div class="item-input-wrap">
-                  <input type="date" placeholder="Digite seu Nome"/>
+                  <input type="date" id="data" placeholder="Digite seu Nome"/>
                 </div>
               </div>
             </div>
@@ -48,7 +50,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">Horário</div>
                 <div class="item-input-wrap">
-                  <input type="time" placeholder="Digite seu Nome"/>
+                  <input type="time" id="horario" placeholder="Digite seu Nome"/>
                 </div>
               </div>
             </div>
@@ -58,7 +60,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">E-mail</div>
                 <div class="item-input-wrap">
-                  <input type="email" placeholder="Digite seu E-Mail"/>
+                  <input type="email" id="emailreservas" placeholder="Digite seu E-Mail"/>
                 </div>
               </div>
             </div>
@@ -67,7 +69,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">Telefone</div>
                 <div class="item-input-wrap">
-                  <input type="tel" placeholder="Digite seu Telefone"/>
+                  <input type="tel" id="telefone" placeholder="Digite seu Telefone"/>
                 </div>
               </div>
             </div>
@@ -77,16 +79,22 @@
               <div class="item-inner">
                 <div class="item-title item-label">Mensagem</div>
                 <div class="item-input-wrap">
-                  <textarea placeholder="Digite sua Mensagem"></textarea>
+                  <textarea id="mensagem" placeholder="Digite sua Mensagem"></textarea>
                 </div>
               </div>
             </div>
           </li>
       <div class="block block-strong color-theme-red">
         <p class="row">
-          <a href="#" class="col button button-big button-fill button-raised">Enviar</a>
+          <a href="#" id="addButton" class="col button button-big button-fill button-raised addButton">Enviar</a>
         </p>
       </div>
     </div>
   </div>
+</div>
+</div>    
+      </div>
+    </div>
+  </div>
+</div>
   
