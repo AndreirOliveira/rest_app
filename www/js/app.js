@@ -85,7 +85,7 @@ $$('#my-login-screen .SignIn').on('click', function () {
     .signInWithEmailAndPassword(username,password) //Promisses
     .then( function () {
         app.dialog.alert('Bem vindo: ' + username);
-        this.$$('.toolbar-inner').text('Bem vindo: ' + username + ' vc está logado!');
+        this.$$('.toolbar-inner').text('Bem vindo: ' + username + ' você está logado!');
         if(username == "admin@gmail.com"){
           $$('.logoff').show();
         $$('.login-screen-open').hide();
@@ -174,7 +174,7 @@ $$('#addButton').on('click', function () {
     $$('input#horario').val('');
     $$('input#emailreservas').val('');
     $$('input#telefone').val('');
-    $$('input#mensagem').val('');
+    $$('#mensagem').val("");
 
   }, function(error){
     app.dialog.alert('Erro, confira o console');
